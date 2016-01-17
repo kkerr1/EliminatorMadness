@@ -24,5 +24,11 @@ module.exports = {
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
     }]
+  },
+  resolve: {
+    modulesDirectories: [
+      'node_modules',
+      'client/src'
+    ]
   }
 };

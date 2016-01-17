@@ -26,8 +26,6 @@
     "eventsource-polyfill": "^0.9.6",
     "react-transform-catch-errors": "^1.0.1",
     "react-transform-hmr": "^1.0.1",
-    "redux-devtools": "^3.0.1",
-    "redux-devtools-log-monitor": "^1.0.2",
     "rimraf": "^2.5.0",
     "webpack": "^1.12.11",
     "webpack-dev-middleware": "^1.4.0",
@@ -40,8 +38,11 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",
-    "react-router": "^1.0.3",
+    "react-router": "^2.0.0-rc5",
     "redux": "^3.0.5",
+    "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.2",
     "redux-simple-router": "^2.0.3"
   }
 }
