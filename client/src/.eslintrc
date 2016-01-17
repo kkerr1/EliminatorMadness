@@ -1,0 +1,9 @@
+{
+  "extends": "defaults/configurations/walmart/es6-react",
+    "rules": {
+      "quotes": [2, "single"]
+    },
+    "env": {
+      "browser": true
+    }
+}
