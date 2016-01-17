@@ -7,8 +7,8 @@ import { DevTools, store } from 'store/configure-store';
 ReactDOM.render(
   <Provider store={store}>
     <div>
-    <Routes />
-    <DevTools />
+      <Routes />
+      <DevTools />
     </div>
   </Provider>,
   document.getElementById('root')
