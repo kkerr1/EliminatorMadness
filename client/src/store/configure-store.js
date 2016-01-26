@@ -1,9 +1,10 @@
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { syncHistory, routeReducer } from 'redux-simple-router';
 import { browserHistory } from 'react-router';
+import thunk from 'redux-thunk';
 import DevTool from 'components/devtools';
 
-const middleware = syncHistory(browserHistory);
+const historyMiddleware = syncHistory(browserHistory);
 const reducer = combineReducers(Object.assign({}, {
   routing: routeReducer
 }));
@@ -11,10 +12,10 @@ const reducer = combineReducers(Object.assign({}, {
 export const DevTools = DevTool;
 
 const finalCreateStore = compose(
-  applyMiddleware(middleware),
+  applyMiddleware(historyMiddleware, thunk),
   DevTools.instrument()
 )(createStore);
 
 export const store = finalCreateStore(reducer);
 
-middleware.listenForReplays(store);
+historyMiddleware.listenForReplays(store);
