@@ -11,5 +11,9 @@
   "dependencies": {
     "express": "^4.13.3",
     "express-jwt": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint-config-defaults": "^8.0.2",
+    "eslint-plugin-filenames": "^0.2.0"
   }
 }

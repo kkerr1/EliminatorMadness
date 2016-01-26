@@ -1,0 +1,7 @@
+{
+  "extends": "defaults/configurations/walmart/es5-node",
+    "rules": {
+      "quotes": [2, "single"],
+      "no-console": 0
+    }
+}

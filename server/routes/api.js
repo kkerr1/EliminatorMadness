@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
+var router = require('express').Router;
+
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
@@ -7,7 +8,7 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 // define the home page route
-router.get('/dates', function(req, res) {
+router.get('/dates', function (req, res) {
   res.send({time: Date.now()});
 });
 
