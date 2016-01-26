@@ -5,6 +5,8 @@ var router = require('express').Router();
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
+  res.setHeader('Content-Type', 'application/json');
+  res.set('Access-Control-Allow-Origin', '*');
   console.log('Request: ', req.url);
   next();
 });
