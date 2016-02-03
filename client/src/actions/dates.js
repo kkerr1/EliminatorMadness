@@ -1,19 +1,11 @@
+import { createAction } from 'redux-actions';
+
 export const BASE_URL = 'http://localhost:3001/api';
 export const REQUEST_DATES = 'REQUEST_DATES';
 export const RECEIVE_DATES = 'RECEIVE_DATES';
-export const requestDates = () => {
-  return {
-    type: REQUEST_DATES
-  };
-};
+export const requestDates = createAction('REQUEST_DATES');
 
-export const receiveDates = (payload) => {
-
-  return {
-    type: RECEIVE_DATES,
-    payload
-  };
-};
+export const receiveDates = createAction(RECEIVE_DATES, (dates) => dates);
 
 export const fetchDates = () => {
   return function (dispatch, getState) {

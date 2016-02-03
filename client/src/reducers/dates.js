@@ -1,21 +1,19 @@
-import { REQUEST_DATES, RECEIVE_DATES } from 'actions/dates';
+import immutable from 'seamless-immutable';
+import { handleActions } from 'redux-actions';
+
 const defaultState = {
-  isFetch: false,
+  isFetching: false,
   payload: []
 };
-export default (state = defaultState, action) => {
-  switch (action.type) {
-  case REQUEST_DATES:
-    return Object.assign({}, state, {
-      isFetching: true
-    });
-  case RECEIVE_DATES:
-    return Object.assign({}, state, {
+export default handleActions({
+  REQUEST_DATES: (state) => {
+    return immutable(state).set('isFetching', true);
+  },
+  RECEIVE_DATES: (state, action) => {
+    // https://github.com/rtfeldman/seamless-immutable/issues/73 - might abandon seamless-immutable
+    return immutable(state).merge({
       isFetching: false,
       payload: action.payload
-    });
-  default:
-    return state;
+    }).asMutable({deep: true});
   }
-
-};
+}, defaultState);
