@@ -30,6 +30,7 @@
     "express": "^4.13.3",
     "history": "^1.17.0",
     "radium": "^0.16.2",
+    "radium-grid": "^1.0.5",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",
@@ -40,7 +41,6 @@
     "redux-devtools": "^3.0.1",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.3",
-    "redux-thunk": "^1.0.3",
-    "seamless-immutable": "^5.0.1"
+    "redux-thunk": "^1.0.3"
   }
 }

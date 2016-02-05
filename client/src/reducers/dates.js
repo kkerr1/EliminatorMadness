@@ -1,19 +1,23 @@
-import immutable from 'seamless-immutable';
 import { handleActions } from 'redux-actions';
 
 const defaultState = {
   isFetching: false,
-  payload: []
+  dates: [],
+  currentDate: {}
 };
 export default handleActions({
   REQUEST_DATES: (state) => {
-    return immutable(state).set('isFetching', true);
+    return Object.assign({}, state, {isFetching: true});
+
   },
   RECEIVE_DATES: (state, action) => {
-    // https://github.com/rtfeldman/seamless-immutable/issues/73 - might abandon seamless-immutable
-    return immutable(state).merge({
-      isFetching: false,
-      payload: action.payload
-    }).asMutable({deep: true});
+    const dates = action.payload;
+    const currentDate = dates.find((date) => date.current);
+    return Object.assign({}, state, {
+      dates,
+      currentDate
+    });
   }
 }, defaultState);
+
+// http://data.ncaa.com/gametool/brackets/championships/basketball-men/d1/2014/data.json

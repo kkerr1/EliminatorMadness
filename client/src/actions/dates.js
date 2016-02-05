@@ -9,7 +9,7 @@ export const receiveDates = createAction(RECEIVE_DATES, (dates) => dates);
 
 export const fetchDates = () => {
   return function (dispatch, getState) {
-    if (getState().dates.payload.length > 0) {
+    if (getState().dates.dates.length > 0) {
       return;
     }
     dispatch(requestDates());
