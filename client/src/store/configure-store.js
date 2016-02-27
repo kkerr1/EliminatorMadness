@@ -7,9 +7,7 @@ import DevTool from 'components/devtools';
 
 const historyMiddleware = syncHistory(browserHistory);
 
-
 export const DevTools = DevTool;
-
 
 const finalCreateStore = compose(
   applyMiddleware(historyMiddleware, thunk),
